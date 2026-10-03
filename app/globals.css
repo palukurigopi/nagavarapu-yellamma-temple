@@ -1,0 +1,1121 @@
+/* ============================= */
+/* BASIC RESET */
+/* ============================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, "Noto Sans Telugu", sans-serif;
+  background: #fffaf2;
+  color: #3d2415;
+  line-height: 1.7;
+}
+
+
+/* ============================= */
+/* NAVIGATION */
+/* ============================= */
+
+nav {
+  width: 100%;
+  padding: 18px 7%;
+
+  background: #7a1f12;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+nav h2 {
+  font-size: 22px;
+}
+
+nav div {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffd166;
+}
+
+
+/* ============================= */
+/* HERO SECTION */
+/* ============================= */
+
+#home {
+  min-height: 650px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 80px 20px;
+
+  color: white;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.42),
+      rgba(0, 0, 0, 0.42)
+    ),
+    url("/temple.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* ============================= */
+/* HERO CONTENT */
+/* ============================= */
+
+.hero-content {
+  width: 100%;
+  max-width: 1000px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 30px;
+}
+
+
+/* Telugu Temple Name */
+
+#home h1 {
+  display: block;
+
+  width: 100%;
+
+  font-size: 52px;
+
+  line-height: 1.3;
+
+  margin-bottom: 12px;
+
+  color: white;
+
+  text-shadow:
+    2px 3px 8px rgba(0, 0, 0, 0.7);
+}
+
+
+/* English Temple Name */
+
+#home h2 {
+  display: block;
+
+  width: 100%;
+
+  font-size: 27px;
+
+  line-height: 1.4;
+
+  margin-bottom: 20px;
+
+  color: #ffd166;
+
+  text-shadow:
+    2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+
+/* Description */
+
+#home p {
+  display: block;
+
+  width: 100%;
+
+  font-size: 21px;
+
+  line-height: 1.5;
+
+  margin-bottom: 35px;
+
+  color: white;
+
+  text-shadow:
+    2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+
+/* ============================= */
+/* HERO BUTTONS */
+/* ============================= */
+
+.hero-buttons {
+  display: flex;
+
+  flex-direction: row;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  width: 100%;
+}
+
+.hero-buttons a {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 170px;
+
+  padding: 14px 28px;
+
+  border-radius: 30px;
+
+  background: #ffd166;
+
+  color: #5b1b0e;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  white-space: nowrap;
+
+  transition: 0.3s;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-buttons a:hover {
+  background: white;
+
+  transform: translateY(-4px);
+}
+
+
+/* ============================= */
+/* COMMON SECTIONS */
+/* ============================= */
+
+section:not(#home) {
+  padding: 75px 8%;
+
+  text-align: center;
+}
+
+section:not(#home) h2 {
+  font-size: 34px;
+
+  color: #7a1f12;
+
+  margin-bottom: 25px;
+}
+
+section:not(#home) > p {
+  max-width: 850px;
+
+  margin: auto;
+
+  font-size: 18px;
+}
+
+
+/* ============================= */
+/* ABOUT */
+/* ============================= */
+
+#about {
+  background: white;
+}
+
+#about p {
+  max-width: 900px;
+
+  margin: auto;
+
+  font-size: 18px;
+}
+
+
+/* ============================= */
+/* DARSHAN TIMINGS */
+/* ============================= */
+
+#timings {
+  background: #fff1d6;
+}
+
+#timings > div {
+  display: inline-block;
+
+  vertical-align: top;
+
+  width: 280px;
+
+  margin: 15px;
+
+  padding: 30px;
+
+  background: white;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.1);
+
+  transition: 0.3s;
+}
+
+#timings > div:hover {
+  transform: translateY(-6px);
+}
+
+#timings h3 {
+  color: #a34219;
+
+  font-size: 22px;
+}
+
+#timings p {
+  font-size: 18px;
+}
+
+
+/* ============================= */
+/* SEVA */
+/* ============================= */
+
+#seva {
+  background: white;
+}
+
+#seva > div {
+  display: inline-block;
+
+  vertical-align: top;
+
+  width: 280px;
+
+  min-height: 180px;
+
+  margin: 15px;
+
+  padding: 30px;
+
+  border-radius: 15px;
+
+  background: #fff8e8;
+
+  border: 1px solid #f0d39b;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+}
+
+#seva > div:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+#seva h3 {
+  color: #7a1f12;
+
+  margin-bottom: 12px;
+}
+
+
+/* ============================= */
+/* GALLERY */
+/* ============================= */
+
+#gallery {
+  background: #fff1d6;
+}
+
+#gallery p {
+  font-size: 18px;
+}
+
+.gallery-container {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 25px;
+
+  flex-wrap: wrap;
+
+  margin-top: 30px;
+}
+
+.gallery-card {
+  overflow: hidden;
+
+  border-radius: 15px;
+}
+
+.gallery-container img {
+  width: 450px;
+
+  height: 300px;
+
+  object-fit: cover;
+
+  display: block;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.18);
+
+  border: 3px solid #f0d39b;
+
+  transition: 0.3s;
+}
+
+.gallery-container img:hover {
+  transform: scale(1.03);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ============================= */
+/* CONTACT */
+/* ============================= */
+
+#contact {
+  background: white;
+}
+
+#contact p {
+  margin: 10px 0;
+
+  font-size: 18px;
+}
+
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+footer {
+  padding: 40px 20px;
+
+  text-align: center;
+
+  background: #4b160e;
+
+  color: white;
+}
+
+footer h3 {
+  color: #ffd166;
+
+  margin-bottom: 10px;
+}
+
+footer p {
+  margin: 5px;
+}
+
+
+/* ============================= */
+/* MOBILE RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  /* Navigation */
+
+  nav {
+    flex-direction: column;
+
+    gap: 15px;
+
+    text-align: center;
+  }
+
+  nav h2 {
+    font-size: 19px;
+  }
+
+  nav div {
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+
+  /* Hero */
+
+  #home {
+    min-height: 600px;
+
+    padding: 50px 20px;
+
+    background-position: center;
+  }
+
+
+  /* Hero Content */
+
+  .hero-content {
+    padding: 20px 10px;
+  }
+
+
+  /* Telugu Name */
+
+  #home h1 {
+    font-size: 34px;
+
+    line-height: 1.35;
+
+    margin-bottom: 12px;
+  }
+
+
+  /* English Name */
+
+  #home h2 {
+    font-size: 20px;
+
+    line-height: 1.4;
+
+    margin-bottom: 18px;
+  }
+
+
+  /* Description */
+
+  #home p {
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    margin-bottom: 30px;
+  }
+
+
+  /* Buttons */
+
+  .hero-buttons {
+    flex-direction: row;
+
+    width: 100%;
+
+    gap: 10px;
+  }
+
+  .hero-buttons a {
+    min-width: 140px;
+
+    padding: 12px 16px;
+
+    font-size: 14px;
+  }
+
+
+  /* Sections */
+
+  section:not(#home) {
+    padding: 55px 20px;
+  }
+
+  section:not(#home) h2 {
+    font-size: 28px;
+  }
+
+
+  /* Timings */
+
+  #timings > div {
+    width: 100%;
+
+    max-width: 350px;
+
+    margin: 10px auto;
+  }
+
+
+  /* Seva */
+
+  #seva > div {
+    width: 100%;
+
+    max-width: 350px;
+
+    margin: 10px auto;
+  }
+
+
+  /* Gallery */
+
+  .gallery-container {
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .gallery-container img {
+    width: 100%;
+
+    max-width: 400px;
+
+    height: 260px;
+  }
+
+
+  /* Contact */
+
+  #contact p {
+    font-size: 16px;
+  }
+
+
+  /* Footer */
+
+  footer {
+    padding: 35px 15px;
+  }
+
+}
+/* ============================= */
+/* SOCIAL MEDIA LINKS */
+/* ============================= */
+
+.social-links {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 30px;
+}
+
+.social-links a {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px 25px;
+
+  border-radius: 30px;
+
+  background: #7a1f12;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  background: #ffd166;
+
+  color: #5b1b0e;
+
+  transform: translateY(-3px);
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .social-links {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .social-links a {
+    width: 220px;
+  }
+
+}
+/* ============================= */
+/* CONTACT SECTION */
+/* ============================= */
+
+.contact-container {
+  max-width: 900px;
+  margin: 30px auto 0;
+
+  display: flex;
+  gap: 20px;
+
+  align-items: stretch;
+}
+
+
+/* Address Box */
+
+.address-box {
+  flex: 0 0 38%;
+
+  background: #fff8e8;
+
+  border: 1px solid #f0d39b;
+
+  border-radius: 12px;
+
+  padding: 22px;
+
+  text-align: left;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.address-box h3 {
+  color: #7a1f12;
+
+  font-size: 20px;
+
+  margin-bottom: 15px;
+
+  text-align: center;
+}
+
+.address-box p {
+  font-size: 16px;
+
+  margin: 7px 0;
+}
+
+
+/* Google Map */
+
+.map-container {
+  flex: 1;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  border: 2px solid #f0d39b;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.10);
+}
+
+.map-container iframe {
+  display: block;
+
+  width: 100%;
+
+  height: 280px;
+}
+
+
+/* Contact Details */
+
+.contact-details {
+  margin-top: 22px;
+}
+
+.contact-details p {
+  margin: 6px 0;
+
+  font-size: 17px;
+}
+
+
+/* Social Links */
+
+.social-links {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 20px;
+}
+
+.social-links a {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 20px;
+
+  border-radius: 25px;
+
+  background: #7a1f12;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  font-size: 14px;
+
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  background: #ffd166;
+
+  color: #5b1b0e;
+
+  transform: translateY(-2px);
+}
+
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .contact-container {
+    flex-direction: column;
+
+    max-width: 450px;
+
+    gap: 18px;
+  }
+
+  .address-box {
+    padding: 20px;
+
+    width: 100%;
+  }
+
+  .address-box p {
+    font-size: 15px;
+  }
+
+  .map-container iframe {
+    height: 250px;
+  }
+
+  .social-links {
+    flex-direction: row;
+
+    flex-wrap: wrap;
+  }
+
+}
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .contact-container {
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+  .address-box {
+    text-align: center;
+
+    padding: 25px;
+  }
+
+  .address-box h3 {
+    font-size: 21px;
+  }
+
+  .address-box p {
+    font-size: 16px;
+  }
+
+  .map-container iframe {
+    height: 300px;
+  }
+
+  .social-links {
+    flex-direction: row;
+
+    gap: 10px;
+  }
+
+  .social-links a {
+    padding: 11px 15px;
+
+    font-size: 14px;
+  }
+
+}
+
+/* ============================= */
+/* COMMITTEE MEMBERS */
+/* ============================= */
+
+#committee {
+  background: #fff8e8;
+}
+
+.committee-intro {
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.committee-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: 30px auto;
+}
+
+.member-card {
+  width: 300px;
+  padding: 28px 25px;
+
+  background: white;
+
+  border-radius: 18px;
+
+  border: 1px solid #f0d39b;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+
+  text-align: center;
+
+  transition: 0.3s;
+}
+
+.member-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+.member-icon {
+  width: 70px;
+  height: 70px;
+
+  margin: 0 auto 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff1d6;
+
+  border-radius: 50%;
+
+  font-size: 32px;
+}
+
+.member-card h3 {
+  color: #7a1f12;
+
+  margin-bottom: 18px;
+
+  font-size: 20px;
+}
+
+.member-card p {
+  margin: 7px 0;
+
+  font-size: 16px;
+}
+
+.member-id {
+  display: inline-block;
+
+  margin-top: 15px;
+
+  padding: 7px 18px;
+
+  border-radius: 20px;
+
+  background: #7a1f12;
+
+  color: white;
+
+  font-weight: bold;
+
+  letter-spacing: 1px;
+}
+
+.committee-register {
+  display: inline-block;
+
+  margin-top: 15px;
+
+  padding: 13px 25px;
+
+  border-radius: 25px;
+
+  background: #ffd166;
+
+  color: #5b1b0e;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.committee-register:hover {
+  background: #7a1f12;
+
+  color: white;
+
+  transform: translateY(-2px);
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .member-card {
+    width: 100%;
+    max-width: 330px;
+  }
+
+  .committee-register {
+    font-size: 14px;
+  }
+
+}
+/* ============================= */
+/* MAIN BUTTONS */
+/* ============================= */
+
+.main-button {
+  display: inline-block;
+
+  margin-top: 20px;
+  padding: 14px 30px;
+
+  background: #7a1f12;
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  border-radius: 30px;
+
+  border: 2px solid #ffd166;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+  transition: all 0.3s ease;
+}
+
+.main-button:hover {
+  background: #a34219;
+  color: #ffd166;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+/* ============================= */
+/* COMMITTEE BUTTON */
+/* ============================= */
+
+.committee-button,
+.register-button {
+  display: inline-block;
+
+  margin-top: 20px;
+  padding: 13px 28px;
+
+  background: #7a1f12;
+  color: white;
+
+  text-decoration: none;
+
+  border: none;
+  border-radius: 30px;
+
+  font-size: 17px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.committee-button:hover,
+.register-button:hover {
+  background: #a34219;
+  color: #ffd166;
+
+  transform: translateY(-3px);
+}
+
+
+/* ============================= */
+/* REGISTER SECTION */
+/* ============================= */
+
+#register {
+  background: #fff1d6;
+}
+
+#register p {
+  font-size: 18px;
+  margin-top: 10px;
+}
