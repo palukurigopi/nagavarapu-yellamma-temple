@@ -18,8 +18,23 @@ export default function Home() {
   const [darshanBookings, setDarshanBookings] = useState<any[]>([]);
   const [showDarshan, setShowDarshan] = useState(false);
 
-  // 👥 Committee Members
-  useEffect(() => {
+// 👥 Committee Members
+useEffect(() => {
+  fetch(
+    "https://script.google.com/macros/s/AKfycbxvAaH_VfjsseIWAv1ZN0cixgQ2b-z8gpVXbnFSiXNBEfnONyFqoKVs32Smdv2OVXg9jw/exec"
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Committee Members:", data);
+      setMembers(data);
+    })
+    .catch((error) => {
+      console.error("Committee API Error:", error);
+    });
+}, []);
+
+// 🙏 Darshan Bookings
+useEffect(() => {
   fetch(
     "https://script.google.com/macros/s/AKfycbyQhGTrFjTjoqXPPC36PoiricgnU-nVAM0s2LqiP_zI68qlN9C9V22greZtHpCgCJB_/exec"
   )
@@ -32,21 +47,6 @@ export default function Home() {
       console.error("Darshan API Error:", error);
     });
 }, []);
-
-  // 🙏 Darshan Bookings
-  useEffect(() => {
-    fetch(
-      "https://script.google.com/macros/s/AKfycbw3etwpAnDK63WrI6Z-uZZy-H6Z6ph-9RIZzDnfClAocoeFVLx06XK4L4Ho_-umLniZ/exec"
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Darshan Bookings:", data);
-        setDarshanBookings(data);
-      })
-      .catch((error) => {
-        console.error("Darshan API Error:", error);
-      });
-  }, []);
 
   return (
     <>
