@@ -14,13 +14,38 @@ export default function Home() {
   const [members, setMembers] = useState<Member[]>([]);
   const [showMembers, setShowMembers] = useState(false);
 
+  // 🙏 Darshan Registration
+  const [darshanBookings, setDarshanBookings] = useState<any[]>([]);
+  const [showDarshan, setShowDarshan] = useState(false);
+
+  // 👥 Committee Members
+  useEffect(() => {
+  fetch(
+    "https://script.google.com/macros/s/AKfycbyQhGTrFjTjoqXPPC36PoiricgnU-nVAM0s2LqiP_zI68qlN9C9V22greZtHpCgCJB_/exec"
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Darshan Bookings:", data);
+      setDarshanBookings(data);
+    })
+    .catch((error) => {
+      console.error("Darshan API Error:", error);
+    });
+}, []);
+
+  // 🙏 Darshan Bookings
   useEffect(() => {
     fetch(
-      "https://script.google.com/macros/s/AKfycbxvAaH_VfjsseIWAv1ZN0cixgQ2b-z8gpVXbnFSiXNBEfnONyFqoKVs32Smdv2OVXg9jw/exec"
+      "https://script.google.com/macros/s/AKfycbw3etwpAnDK63WrI6Z-uZZy-H6Z6ph-9RIZzDnfClAocoeFVLx06XK4L4Ho_-umLniZ/exec"
     )
       .then((res) => res.json())
-      .then((data) => setMembers(data))
-      .catch((error) => console.log(error));
+      .then((data) => {
+        console.log("Darshan Bookings:", data);
+        setDarshanBookings(data);
+      })
+      .catch((error) => {
+        console.error("Darshan API Error:", error);
+      });
   }, []);
 
   return (
@@ -28,18 +53,19 @@ export default function Home() {
       {/* ================= NAVIGATION ================= */}
 
       <nav>
-        <h2>🛕 శ్రీ నాగవరపు ఎల్లమ్మ తల్లి🛕</h2>
+     <h2>🛕 శ్రీ నాగవరపు ఎల్లమ్మ తల్లి 🛕</h2>
 
-        <div>
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#timings">Timings</a>
-          <a href="#seva">Seva</a>
-          <a href="#committee">కమిటీ సభ్యులు</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
+    <div>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#timings">Timings</a>
+    <a href="#seva">Seva</a>
+    <a href="#committee">కమిటీ సభ్యులు</a>
+    <a href="#darshan">దర్శనం</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+   </div>
+  </nav>
 
 
       {/* ================= HOME ================= */}
@@ -158,11 +184,35 @@ export default function Home() {
 
       </section>
 
-
+       
       {/* ================= COMMITTEE ================= */}
+
+
 {/* ========================= */}
 {/* COMMITTEE MEMBERS */}
 {/* ========================= */}
+
+<section id="register">
+
+  <h2>🪪ఆలయ కమిటీలో చేరండి🪪</h2>
+
+  <p>
+    ఆలయ కమిటీ సభ్యుడిగా నమోదు చేసుకోవడానికి
+    క్రింది ఫారమ్‌ను పూర్తి చేయండి.✍️✍️
+  </p>
+
+  <a
+    className="register-button"
+    href="https://docs.google.com/forms/d/e/1FAIpQLSe1y_8IL4AwcGJHh3-0y4amllXnTQECn7abE25SMARRGPIOLA/viewform?usp=dialog"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+
+    కమిటీ సభ్యుడిగా నమోదు చేసుకోండి
+  </a>
+
+</section>
+
 
 <section id="committee">
 
@@ -243,11 +293,102 @@ export default function Home() {
 </section>
 
 
+
+{/* ================= DARSHAN ================= */}
+
+<section id="darshan">
+
+  <h2>🙏 దర్శనం నమోదు చేసుకున్న భక్తులు 🙏</h2>
+
+  <p>
+    దర్శనం కోసం నమోదు చేసుకున్న భక్తుల వివరాలను చూడడానికి
+    క్రింది బటన్‌పై క్లిక్ చేయండి.
+  </p>
+
+ <a
+  href="https://docs.google.com/forms/d/e/1FAIpQLSfz46x701oarejANH_p3BFxbxq9t4muze3KKZuOU2HCqpMqMA/viewform?usp=publish-editor"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="register-button"
+>
+  🙏 దర్శనం నమోదు చేసుకోండి
+</a>
+
+  <button
+    className="committee-button"
+    onClick={() => setShowDarshan(!showDarshan)}
+  >
+    {showDarshan
+      ? "దర్శనం వివరాలు దాచు"
+      : "🙏 దర్శనం వివరాలు చూడండి"}
+  </button>
+
+  {showDarshan && (
+    <div className="committee-container">
+
+      {darshanBookings.length === 0 ? (
+
+        <p>
+          దర్శనం వివరాలు లోడ్ అవుతున్నాయి... 🙏
+        </p>
+
+      ) : (
+
+        darshanBookings.map((booking, index) => (
+
+          <div
+            className="member-card"
+            key={index}
+          >
+
+            <div className="member-icon">
+              🙏
+            </div>
+
+            <h3>
+              దర్శనం నమోదు
+            </h3>
+
+            <p>
+              <strong>భక్తుని పేరు:</strong>{" "}
+              {booking.name || "వివరాలు లేవు"}
+            </p>
+
+            <p>
+              <strong>దర్శనం తేదీ:</strong>{" "}
+              {booking.date || "వివరాలు లేవు"}
+            </p>
+
+            <p>
+              <strong>దర్శనం సమయం:</strong>{" "}
+              {booking.time || "వివరాలు లేవు"}
+            </p>
+
+            <p>
+              <strong>వ్యక్తులు:</strong>{" "}
+              {booking.persons || "వివరాలు లేవు"}
+            </p>
+
+            <div className="member-id">
+              DAR-{String(index + 1).padStart(3, "0")}
+            </div>
+
+          </div>
+
+        ))
+
+      )}
+
+    </div>
+  )}
+
+</section>
+
 {/* ========================= */}
 {/* REGISTER */}
 {/* ========================= */}
 
-<section id="register">
+{/* <section id="register">
 
   <h2>🪪ఆలయ కమిటీలో చేరండి🪪</h2>
 
@@ -262,10 +403,11 @@ export default function Home() {
     target="_blank"
     rel="noopener noreferrer"
   >
+
     కమిటీ సభ్యుడిగా నమోదు చేసుకోండి
   </a>
 
-</section>
+</section> */}
 
 
       {/* ================= GALLERY ================= */}
